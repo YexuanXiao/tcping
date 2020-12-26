@@ -1,0 +1,2 @@
+windres resources.rc -O coff -o obj.res
+g++ base64.cpp tee.cpp ws-util.cpp main.cpp tcping.cpp obj.res -Os -Wno-deprecated -lwsock32 -lws2_32 -o tcping.exe "-Wl,--gc-sections" "-Wl,--strip-all"
